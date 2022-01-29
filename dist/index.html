@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="body_header">Reminders & To-do's</div>
+        <div class="body_container">
+            <div class="sidebar_container">
+                <h3 class="view_header">Current View</h3>
+                <div class="filter_container">
+                    <div class="filter_today active-view">Today</div>
+                    <div class="filter_tommorrow">Tommorrow</div>
+                    <div class="filter_lastSevenDays">Last 7 Days</div>
+                    <div class="filter_dateRange"></div>
+                </div>
+                <h3 class="project_name_header">My List</h3>
+                <div class="project_list_container">
+<!--                     
+                    <li class="project-name active-project" data-project-item>
+                        Item 1
+                    </li>
+                    <li class="project-name" data-project-item>
+                        Item 2
+                    </li>
+                    <li class="project-name" data-project-item>
+                        Item 3
+                    </li> -->
+                        <div class="add_new_project">
+                        <!-- form for adding new project-->
+                        <form action="" data-new-form>
+                            <input type="text" class="new_project" placeholder="enter new project">
+                            <button class="btn_new_project">+</button>
+                        </form>
+                        </div>
+                </div>
+            </div>
+            <div class="main_container">
+                <div class="project_header">
+                    <div class="project_dlbtn"><h3 class="project_name">Project No.1</h3><img src="../src/pencil.png"></div>
+                    <div class="project_task_counter">3 tasks remaining</div>
+                </div>
+                <div class="add_task"><button class="add_task_btn">+ Add task</button></div>
+                <div class="project_list_body">
+                    <div class="checkbox_container">
+                        <input type="checkbox" class="task_list" id="task-1">
+                        <label for="task-1">task 1</label>
+                        <div class="task_due_date">4/9/2022
+                        <img class="delete_btn" src="../src/delete.png"></div>
+                    </div>  
+                    <div class="checkbox_container">
+                    <input type="checkbox" class="task_list" id="task-2">
+                    <label for="task-2">task 2</label>
+                    <div class="task_due_date">4/9/2022
+                    <img class="delete_btn" src="../src/delete.png"></div>
+                    </div>
+                    <div class="checkbox_container">
+                    <input type="checkbox" class="task_list" id="task-3">
+                    <label for="task-3">task 3, to be completed testets</label>
+                    <div class="task_due_date">4/9/2022
+                    <img class="delete_btn" src="../src/delete.png"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="main.js" defer></script>
+</body>
+</html>

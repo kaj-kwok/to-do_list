@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+:root {
+    --clr-primary: rgb(235, 235, 235);
+    --clr-text-dark: #003366;
+    --clr-text-light: white;
+    --clr-primaryheader: #003366;
+}
+
+*, 
+*::before,
+*::after {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+body {
+    background-color: var(--clr-primary);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    font-weight: lighter;
+}
+
+/* project add button */
+.new_project {
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid black;
+    font-family: inherit;
+    outline: none;
+    transform: scale(1);
+    transition: transform 150ms ease-in-out;
+}
+
+.new_project:focus{
+    transform: scale(1.2)
+}
+
+.new_project:focus::placeholder {
+    opacity: 0.2;
+}
+
+.btn_new_project {
+    border: 0;
+    padding: 10px;
+    font-size: large;
+}
+
+li {
+    list-style-type: none;
+}
+
+.body_header {
+    font-size: 2rem;
+    text-align: center;
+    background-color: var(--clr-primaryheader);
+    color: var(--clr-text-light);
+    padding: 20px;
+}
+
+.body_container {
+    display:grid;
+    width: 100vw;
+    grid-template-columns: 1fr minmax(100px, 300px) minmax(250px, 800px) 1fr;
+}
+
+.sidebar_container {
+    grid-column: 2;
+    line-height: 1.7;
+    font-size: 1.2rem;
+    margin: 2rem;
+}
+
+.active-project{
+    font-weight: bolder;
+}
+
+.active-view {
+    font-weight: bolder;
+}
+
+/* CSS styles for main task container */
+
+.main_container{
+    --space: 3rem;
+    grid-column: 3; 
+    font-size: 1.3rem;
+    margin: var(--space);
+}
+
+.add_task_btn {
+    padding: 10px;
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 10px;
+    color: white;
+
+}
+
+.add_task_btn:hover {
+    background-color: #05D389 ;
+}
+
+.project_dlbtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* align header and delete button */
+.project_task_counter{
+    text-align: right;
+    font-size: 1rem;
+}
+
+.project_list_body {
+    margin-top: var(--space)
+}
+
+.checkbox_container {
+    background-color:white;
+    display:flex;
+    align-items: center;
+    margin: 4px;
+    justify-content: space-between;
+}
+
+.checkbox_container label {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+   position:relative;
+}
+
+.checkbox_container [type="checkbox"] {
+    cursor: pointer;
+    opacity: 0;  /* hide checkbox */
+    position: absolute;
+}
+
+/* create a custom checkbox */
+.checkbox_container label::before {
+    content: '';
+    width: 1em;
+    height: 1em;
+    border: 0.05em solid black;
+    margin-right: 1em;
+    margin-left: 0.25em;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(1);
+    transition: transform 0.15s;
+    
+    
+}
+
+/* on hover show the box */
+.checkbox_container label:hover::before, 
+.checkbox_container input[type="checkbox"]:hover + label::before {
+    background-color: #2266dc;
+    border-color: black;
+
+}
+
+/* on check , add in checkmark */
+.checkbox_container input[type="checkbox"]:checked + label::before {
+    content: '\2714';
+    color: white;
+    background-color: #2266dc;
+    border-color: black;
+    transform: scale(1.2)
+    
+}
+
+.checkbox_container input[type="checkbox"]:checked + label {
+    opacity: 0.5;
+
+}
+
+/* create element for strike through */
+.checkbox_container label::after {
+    content: "";
+    position: absolute;
+    left: 2em;
+    right: 0;
+    height: 3px;
+    background: black;
+    transform: scale(0);
+    transform-origin: right;
+    transition: transform 150ms ease-in-out
+}
+
+.checkbox_container input[type="checkbox"]:checked + label::after {
+    transform: scale(1);
+    transform-origin: left;
+}
+
+/* delete button */
+.delete_btn {
+    height: 1em;
+    width: 1em;
+    position: relative;
+}
+
+.task_due_date{
+    font-size: smaller;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    margin-right: 0.5em;
+}
+
